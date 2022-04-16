@@ -10,7 +10,7 @@ async function chain(r) {
     .then((Response) => {
       r.subrequest(
         "/persistance" + engine_uri,
-        `UserID=1&AccountID=1&Username=aref&System=live`
+        `UserID=${Response.UserID}&AccountID=${Response.AccountID}&Username=${Response.Username}&System=${Response.System}`
       ).then((resp) => {
         ngx.log(ngx.WARN, "----------------------------------");
         ngx.log(ngx.WARN, "\n" + JSON.stringify(resp));
